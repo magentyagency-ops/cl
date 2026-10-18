@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: cle-de-sol
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: APP_PASSWORD
+        generateValue: true
+      - key: MAX_ACTIVE_JOBS
+        value: "1"

@@ -22,6 +22,10 @@ L'interface s'ouvre sur http://127.0.0.1:5050.
 
 ## Déploiement (mode web)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/magentyagency-ops/cl)
+
+Gratuit sur Render : le mot de passe (`APP_PASSWORD`) est généré automatiquement, visible dans l'onglet « Environment ».
+
 En mode web, l'appli ne touche pas au disque de l'utilisateur : les MP3 sont téléchargés en ZIP depuis le navigateur.
 
 ```bash
