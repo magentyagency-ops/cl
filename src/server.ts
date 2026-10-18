@@ -178,7 +178,14 @@ const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 *
 app.disable("x-powered-by");
 app.use(auth);
 app.use(express.json());
-app.use(express.static(path.join(ROOT, "public")));
+// Selon l'hébergeur, l'appli est lancée depuis la racine, dist/ ou un autre dossier.
+const PUBLIC_DIR =
+  [path.join(ROOT, "public"), path.join(process.cwd(), "public")].find((d) => existsSync(path.join(d, "index.html"))) ??
+  path.join(ROOT, "public");
+app.use(express.static(PUBLIC_DIR));
+app.get("/", (_req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, "index.html"));
+});
 
 app.get("/healthz", (_req, res) => {
   res.send("ok");
