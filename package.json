@@ -1,0 +1,31 @@
+{
+  "name": "mp3spotify",
+  "version": "1.0.0",
+  "description": "Convertit une playlist Spotify en MP3 pour clé USB",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "serve": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "dependencies": {
+    "archiver": "^8.0.0",
+    "express": "^5.3.0",
+    "multer": "^2.4.0",
+    "node-id3": "^0.2.9",
+    "ytmusic-api": "^5.3.1"
+  },
+  "devDependencies": {
+    "@types/archiver": "^8.0.0",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}
